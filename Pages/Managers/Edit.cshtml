@@ -1,0 +1,65 @@
+﻿@page
+@model TaskManager.Pages.Managers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Manager</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Manager.ID" />
+            <div class="form-group">
+                <label asp-for="Manager.ActivityName" class="control-label"></label>
+                <input asp-for="Manager.ActivityName" class="form-control" />
+                <span asp-validation-for="Manager.ActivityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.ActivityDate" class="control-label"></label>
+                <input asp-for="Manager.ActivityDate" class="form-control" />
+                <span asp-validation-for="Manager.ActivityDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.ActivityHour" class="control-label"></label>
+                <input asp-for="Manager.ActivityHour" class="form-control" />
+                <span asp-validation-for="Manager.ActivityHour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.ActivityDesctription" class="control-label"></label>
+                <input asp-for="Manager.ActivityDesctription" class="form-control" />
+                <span asp-validation-for="Manager.ActivityDesctription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.ReleaseDate" class="control-label"></label>
+                <input asp-for="Manager.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Manager.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.Genre" class="control-label"></label>
+                <input asp-for="Manager.Genre" class="form-control" />
+                <span asp-validation-for="Manager.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manager.Price" class="control-label"></label>
+                <input asp-for="Manager.Price" class="form-control" />
+                <span asp-validation-for="Manager.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
